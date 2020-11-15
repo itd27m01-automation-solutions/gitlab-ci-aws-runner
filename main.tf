@@ -16,7 +16,7 @@ resource "aws_instance" "gitlab_spawner" {
     Terraform   = "true"
     Environment = var.environment
     Application = "gitlab"
-    Role        = "gitaly"
-    Name        = "gitlab-runner-${index(var.gitlab_private_subnets, each.key)}"
+    Role        = "runner"
+    Name        = "gitlab-runner-${var.environment}-${index(var.gitlab_private_subnets, each.key)}"
   }
 }
