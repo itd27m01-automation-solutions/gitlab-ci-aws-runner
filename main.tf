@@ -1,5 +1,4 @@
 // Creates runner spawners EC2 instances
-
 resource "aws_instance" "gitlab_spawner" {
   for_each = toset(var.gitlab_private_subnets)
 
